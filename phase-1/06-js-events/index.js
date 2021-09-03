@@ -61,6 +61,16 @@ function renderPokemon(pokemon) {
   deleteBttn.className = "delete-bttn";
   deleteBttn.textContent = "Delete";
 
+  //add functionality to delete button
+
+  deleteBttn.addEventListener(`click`, deletePokemon)
+  
+  //const deletePokemon = () => pokeCard.remove();
+  
+  function deletePokemon() {
+    pokeCard.remove();
+    }
+
   pokeCard.append(pokeImg, pokeName, pokeLikes, likesNum, likeBttn, deleteBttn);
   pokeContainer.appendChild(pokeCard);
 }
@@ -68,3 +78,4 @@ function renderPokemon(pokemon) {
 pokemons.forEach(function (pokemon) {
   renderPokemon(pokemon);
 });
+
